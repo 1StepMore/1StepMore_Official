@@ -7,6 +7,7 @@
   --od-color-text-primary: #1a1a2e;
   --od-color-text-secondary: #4a4a6a;
   --od-color-bg-testimonials: #f0eff4;
+  --od-color-white: #ffffff;
 
   /* 字体：极客展示 vs 舒适阅读 */
   --od-font-display: "Geist Sans", "Inter", system-ui, sans-serif;
