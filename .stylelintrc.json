@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "color-no-hex": true,
+    "custom-property-pattern": "^od-",
+    "function-allowed-list": ["var"]
+  }
+}

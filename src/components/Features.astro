@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+
+const products = await getCollection('docs', (entry) =>
+  entry.id.startsWith('products/') && (entry.id === 'products/one-mu' || entry.id === 'products/guan-lan')
+);
+---
+
+<section class="features">
+  <h2 class="features-title">核心产品</h2>
+  <div class="features-grid">
+    {products.map((product) => (
+      <article class="feature-card">
+        <h3 class="feature-title">{product.data.title}</h3>
+        <p class="feature-pain">{product.data.pain_point}</p>
+        <p class="feature-selling">{product.data.core_selling}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: var(--od-space-layout);
+  }
+
+  .features-title {
+    font-family: var(--od-font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--od-color-text-primary);
+    text-align: center;
+    margin-bottom: var(--od-space-layout);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--od-space-layout);
+  }
+
+  .feature-card {
+    background-color: var(--od-color-human-touch);
+    border-radius: var(--od-radius-human-touch);
+    padding: calc(var(--od-space-layout) * 1.5);
+    border: 1px solid var(--od-color-ai-speed);
+  }
+
+  .feature-title {
+    font-family: var(--od-font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--od-color-ai-speed);
+    margin: 0 0 var(--od-space-layout) 0;
+  }
+
+  .feature-pain {
+    font-family: var(--od-font-body);
+    font-size: 0.875rem;
+    color: var(--od-color-text-secondary);
+    margin: 0 0 calc(var(--od-space-layout) * 0.5) 0;
+    line-height: 1.6;
+  }
+
+  .feature-selling {
+    font-family: var(--od-font-body);
+    font-size: 1rem;
+    color: var(--od-color-text-primary);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
