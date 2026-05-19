@@ -1,0 +1,12 @@
+Verification: grep -E "私有化|知识库|规范引擎|多格式" guan-wei.mdx
+Found 11 matches across 5 sections:
+- Line 5: core_selling (frontmatter)
+- Line 28: 私有化知识库
+- Line 34: 私有化知识库 (section header)
+- Line 38: 规范引擎 (section header)
+- Line 42: 多格式交付 (section header)
+- Line 44: 多格式交付 (context)
+- Line 48: 私有化部署
+- Line 67: 打通从策略到多格式交付的最后一公里
+
+All required keywords present.

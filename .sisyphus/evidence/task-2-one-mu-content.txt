@@ -1,0 +1,11 @@
+Task-2 Evidence: grep -E "一步到位|顶尖模型|自研流程" src/content/docs/products/one-mu.mdx
+
+Results:
+- 5 matches found
+- Line 5 (frontmatter): core_selling: 集成顶尖模型与自研流程，告别"一句出图"的随机感，实现"一步到位"的交付品质
+- Line 19 (body): 通过自研流程对顶尖模型进行精细化调控，让输出从"随机感"走向"一步到位"
+- Line 35 (body): **集成顶尖模型** — 整合业界领先的AI模型能力
+- Line 37 (body): **自研流程体系** — 这是壹目的真正壁垒
+- Line 39 (body): 告别了"一句出图"的随机感，实现了"一步到位"的交付品质
+
+All required keywords present: 一步到位, 顶尖模型, 自研流程

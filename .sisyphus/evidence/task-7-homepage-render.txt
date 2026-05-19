@@ -1,0 +1,9 @@
+=== Task 7: Homepage Renders Product Cards ===
+Product data found in dist/index.html:
+- 壹目·AI内容工坊 ✅
+- 9.9元/月 ✅
+- 贯维·行业智造引擎 ✅
+
+Product links found in dist/index.html
+href="/docs/products/products/guan-wei/"
+href="/docs/products/products/one-mu/"

@@ -1,0 +1,17 @@
+========================================
+  ATDD Schema Validation Test Suite
+========================================
+
+=== Test 1: Missing price field should block build ===
+  Created test file with missing price field
+  ✅ PASS: Build blocked, error mentions "price"
+  Cleaned up test file
+
+=== Test 2: Valid product should pass build ===
+  ✅ PASS: Valid build succeeded
+
+========================================
+  Results: 2 passed, 0 failed
+========================================
+
+✅ ATDD validation test PASSED

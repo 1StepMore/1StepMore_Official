@@ -1,0 +1,32 @@
+:root {
+  /* 色彩：冷峻科技 vs 温暖人文 */
+  --od-color-ai-speed: #6366F1;
+  --od-color-human-touch: #F8F5F0;
+
+  /* 扩展色彩：文本与背景（由核心色彩推导） */
+  --od-color-text-primary: #1a1a2e;
+  --od-color-text-secondary: #4a4a6a;
+  --od-color-bg-testimonials: #f0eff4;
+
+  /* 字体：极客展示 vs 舒适阅读 */
+  --od-font-display: "Geist Sans", "Inter", system-ui, sans-serif;
+  --od-font-body: "Lora", "Noto Serif", Georgia, serif;
+
+  /* 间距与圆角：风格无缝切换的核心变量 */
+  --od-radius-ai-speed: 4px;
+  --od-radius-human-touch: 12px;
+  --od-space-layout: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--od-font-body);
+  background-color: var(--od-color-human-touch);
+  color: var(--od-color-text-primary);
+  line-height: 1.6;
+}

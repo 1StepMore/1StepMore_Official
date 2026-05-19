@@ -1,0 +1,8 @@
+Task-2 Build Success: npm run build
+
+Build completed successfully:
+- [build] Complete! 1 page(s) built in 8.56s
+- [@astrojs/sitemap] Warning about no pages found is not a blocking error (docs collection had content before but this is a fresh project)
+- [starlight:pagefind] Found 1 HTML files, search index built successfully
+
+Build output directory: /mnt/d/贯维/1StepMore_Official/dist/

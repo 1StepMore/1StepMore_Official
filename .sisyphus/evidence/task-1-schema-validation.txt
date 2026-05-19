@@ -1,0 +1,36 @@
+# Task 1: Schema Validation Evidence (Invalid Build)
+
+## Test File Created
+```mdx
+---
+title: Test Product
+type: product
+pain_point: test pain
+core_selling: test selling
+---
+```
+Note: Missing required `price` field
+
+## Build Command
+```bash
+npm run build
+```
+
+## Build Output
+```
+> subsequent-sphere@0.0.1 prebuild
+> node scripts/validate-content.js
+
+❌ ATDD ERROR: src/content/docs/products/test-invalid.mdx is missing required field "price" (required for type=product)
+
+⚠️  ATDD validation failed. Fix the errors above before building.
+```
+
+## Verification
+- [x] Build fails (prebuild script exits with error)
+- [x] Error message mentions "price" field specifically
+- [x] Error clearly identifies which file is missing the field
+- [x] Error specifies field is required for type=product
+
+## Conclusion
+Schema validation is WORKING correctly. The build was blocked because the test MDX file was missing the required `price` field, and the error message clearly stated this.

@@ -1,0 +1,101 @@
+壹目贯维官网开发计划 (OC/OD Vibe Coding 极简版)
+核心原则：OD 定调，OC 胶水，DD 护航。绝不写死页面，一切皆配置；绝不硬编码样式，一切皆 Token。
+
+📋 Phase 0: OD 视觉锚定与 Token 宪法 (设计即代码)
+在写一行代码前，先让 OD 确立视觉根基，这是杜绝“AI 味”的源头。
+
+OC/OD 协同指令
+在 OpenCode 中输入：
+“启动 OD skill saas-landing。我的品牌是壹目贯维，Slogan 是 ‘AI Speed, Human Touch’。请融合 Linear 的结构感与 Notion 的温暖感。我需要看到 Hero 区（强调告别 AI 随机感）、Features 区（三大产品矩阵）、Testimonials 区（人文洞察）。产出 landing-design.md 和 HTML 原型。”
+
+提取并锁定 Design Token (视觉宪法)
+要求 OC 从 OD 产出的原型中，强制提取并生成 src/styles/od-tokens.css。
+必须包含以下 4 类 Token（补全了间距与圆角，确保后续风格切换不崩）：
+
+   :root {
+     /* 色彩: 冷峻科技 vs 温暖人文 */
+     --od-color-ai-speed: #电光蓝/紫; /* 用于按钮、高亮 */
+     --od-color-human-touch: #米白/暖灰; /* 用于大块背景 */
+     /* 字体: 极客展示 vs 舒适阅读 */
+     --od-font-display: 'Geist Sans', sans-serif; /* 展现科技感 */
+     --od-font-body: 'Lora', serif; /* 展现阅读舒适感(人味) */
+     /* 间距与圆角 (关键: 风格无缝切换的核心) */
+     --od-radius-ai-speed: 4px;   /* 锐利：用于代码块、标签 */
+     --od-radius-human-touch: 12px; /* 柔和：用于卡片、主按钮 */
+     --od-space-layout: 1.5rem;   /* 可随风格调整宽松度 */
+   }
+ATDD 验收
+本地打开 od-tokens.css，肉眼检查这 4 类变量必须存在，缺一不可让 OC 补齐。
+📋 Phase 1: 基础设施与输入守卫 (Astro + Starlight 成熟轮子)
+坚持用 Starlight 作为底座，省去代码小白写布局和路由的痛苦。同时解决 GitHub Pages 部署的路径坑。
+
+OC 初始化指令
+“使用 Astro + Starlight 初始化项目。重要：我的 GitHub 仓库名是 [替换成你的仓库名]，请在 astro.config.mjs 中正确配置 site 和 base（例如 base: '/[仓库名]/'），确保部署到 GitHub Pages 时 CSS 和路由不会 404。”
+
+配置驱动的路由 (胶水逻辑)
+让 OC 建立 nav-config.yaml (栏目配置中心)，并编写一段构建胶水脚本，读取 yaml 动态生成 Starlight 的 sidebar：
+
+   # nav-config.yaml
+   sections:
+     - name: 产品服务
+       dir: products
+       showInNav: true # 改为 false 即可隐藏整个栏目
+     - name: 解决方案
+       dir: solutions
+       showInNav: true
+     - name: 客户案例
+       dir: cases
+       showInNav: true
+     - name: 博客
+       dir: blog
+       showInNav: true
+UTDD / 输入守卫
+让 OC 在 src/content/config.ts 中严格定义 Zod Schema：
+产品页必须包含：title, pain_point, core_selling, price。
+博客页必须包含：title, description, pubDate。
+ATDD 验收
+运行 npm run build。故意在一个产品 MDX 中漏填 price，如果 Astro 没有红牌报错拦截，就让 OC 修复 Schema。
+📋 Phase 2: 内容通道与品牌建模 (MDX 进，HTML 出)
+OC 批量生成指令
+“基于《品牌信息档案》，在 src/content/ 下按栏目建立 MDX 文件：products/one-mu.mdx, products/guan-wei.mdx, products/guan-lan.mdx, blog/ai-speed-human-touch.mdx。严格遵循 config.ts 中的 Schema 填写 Frontmatter，正文部分用 Vibe Coding 生成结构化内容。”
+
+ATDD 验收
+三个产品的 MDX 必须通过构建，且首页能动态读取并渲染这些 MDX 的 Frontmatter（如自动生成 Features 卡片）。
+📋 Phase 3: 组件组装与样式绝对保护 (防 AI 失控)
+这是 AI 写 CSS 最容易失控的阶段，必须用最简单的 Harness 限制它。
+
+OC 组件开发指令
+“编写首页和布局组件。铁律：所有样式只能使用 src/styles/od-tokens.css 中的变量（如 var(–od-color-ai-speed)），绝对不允许写死任何颜色值、字体值和关键间距值！
+
+微交互提示：代码块用 --od-font-display + 冷色调高亮；正文排版用 --od-font-body + --od-space-layout 行间距。”
+BDD 场景：视觉无缝切换
+Given：想把网站从“科技极客风”切换为“杂志人文风”。
+When：对 OC 说“用 OD 把网站调暖”，OC 只修改 od-tokens.css 中的变量值（如把 --od-radius-ai-speed 改大）。
+Then：全站视觉无缝切换，组件代码零修改。
+📋 Phase 4: 自动化闭环与 GitHub Pages 部署 (零干预)
+GitHub Actions 是最后的守门员，绝不让 AI 的“私货”上线。
+
+OC 生成 CI 指令
+“生成 .github/workflows/deploy.yml，推送到 main 分支自动构建并部署到 GitHub Pages。请使用最新的 actions/deploy-pages@v4 和 actions/upload-pages-artifact@v3，确保配置了正确的 permissions。”
+
+极简 Lint Harness (核心防线)
+在 yml 中加入这段极简的 Shell 脚本，专门拦截 AI 偷写硬编码，不需要安装任何复杂依赖：
+
+   - name: Lint CSS Hardcode (拦截 AI 瞎写)
+     run: |
+       # 拦截 #号颜色、rgb、hsl 和常见的硬编码色名
+       grep -rnE 'color: #(.*);|color: rgb|color: hsl|color: red|color: blue|color: black|color: white' src/ && exit 1 || exit 0
+
+   - name: Check Token Integrity (防 AI 删库跑路)
+     run: |
+       # 确保视觉宪法的四大支柱存在
+       grep -q '--od-color-ai-speed' src/styles/od-tokens.css || exit 1
+       grep -q '--od-color-human-touch' src/styles/od-tokens.css || exit 1
+       grep -q '--od-font-display' src/styles/od-tokens.css || exit 1
+       grep -q '--od-radius-ai-speed' src/styles/od-tokens.css || exit 1
+增强型离线报告
+让 OC 在构建末尾生成 build-report.html：栏目统计、OD Token 使用率（查出冗余或未使用的 Token）。
+💡 老板日常 Vibe Coding 操作指南 (上线后)
+发新文章：在 src/content/blog/ 新建 .mdx，填两行 Frontmatter，Push 即发布。
+新增栏目：nav-config.yaml 加两行，建个文件夹，Push 即上线。
+改版风格：对 OC 说：“我觉得现在网站太冷了，用 OD 把它调暖一点”，OC 更新 od-tokens.css 里的变量值，Push 即换肤。

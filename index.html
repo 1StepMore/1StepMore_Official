@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壹目贯维 - AI Speed, Human Touch</title>
+  <link rel="stylesheet" href="src/styles/od-tokens.css">
+  <style>
+    :root {
+      --od-space-layout: 1.5rem;
+    }
+    body {
+      font-family: var(--od-font-body);
+      background-color: var(--od-color-human-touch);
+      color: var(--od-color-text-primary);
+      margin: 0;
+      padding: 0;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--od-space-layout);
+    }
+    .hero h1 {
+      font-family: var(--od-font-display);
+      font-size: 3.5rem;
+      color: var(--od-color-ai-speed);
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      color: var(--od-color-text-secondary);
+    }
+    .cta-button {
+      background-color: var(--od-color-ai-speed);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: var(--od-radius-ai-speed);
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+    .features {
+      padding: 4rem var(--od-space-layout);
+      background-color: white;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background-color: var(--od-color-human-touch);
+      padding: 2rem;
+      border-radius: var(--od-radius-human-touch);
+      border: 1px solid color-mix(in srgb, var(--od-color-ai-speed) 10%, transparent);
+    }
+    .feature-card h3 {
+      font-family: var(--od-font-display);
+      color: var(--od-color-ai-speed);
+      margin-top: 0;
+    }
+    .testimonials {
+      padding: 4rem var(--od-space-layout);
+      background-color: var(--od-color-bg-testimonials);
+    }
+    .testimonials h2 {
+      text-align: center;
+      font-family: var(--od-font-display);
+      color: var(--od-color-ai-speed);
+      margin-bottom: 3rem;
+    }
+    .testimonial {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-style: italic;
+      color: var(--od-color-text-secondary);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>AI Speed, Human Touch.</h1>
+    <p>告别 AI 随机感，一步到位的交付品质。壹目贯维，让 AI 原生内容生产回归人性化。</p>
+    <button class="cta-button">立即体验</button>
+  </section>
+
+  <section class="features">
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>壹目·AI内容工坊</h3>
+        <p>面向个人/小型团队的 AI 原生产能工具集，9.9元/月起。</p>
+      </div>
+      <div class="feature-card">
+        <h3>贯维·行业智造引擎</h3>
+        <p>面向中大型企业的定制化 AI 内容中台，私有化知识库 + 规范引擎。</p>
+      </div>
+      <div class="feature-card">
+        <h3>知识IP共创</h3>
+        <p>高端项目制服务，深度共创高品质内容。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>人文洞察</h2>
+    <div class="testimonial">
+      <p>"与其被 AI 替代，不如用 AI 放大我们的创造力。"</p>
+    </div>
+    <div class="testimonial">
+      <p>"Turn-Key 解决方案让我们从繁琐的提示词调试中解放出来。"</p>
+    </div>
+  </section>
+</body>
+</html>

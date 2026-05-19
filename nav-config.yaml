@@ -1,0 +1,13 @@
+sections:
+  - name: 产品服务
+    dir: products
+    showInNav: true
+  - name: 解决方案
+    dir: solutions
+    showInNav: true
+  - name: 客户案例
+    dir: cases
+    showInNav: true
+  - name: 博客
+    dir: blog
+    showInNav: true
