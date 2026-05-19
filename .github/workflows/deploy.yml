@@ -31,9 +31,10 @@ jobs:
             echo "ERROR: Hardcoded colors found. Use var(--od-*) tokens only."
             exit 1
           fi
-          for token in "--od-color-ai-speed" "--od-color-human-touch" "--od-font-display" "--od-radius-ai-speed"; do
+          echo "PASS: No hardcoded colors"
+          for token in "od-color-ai-speed" "od-color-human-touch" "od-font-display" "od-radius-ai-speed"; do
             if ! grep -q "$token" src/styles/od-tokens.css; then
-              echo "ERROR: Required token $token missing from od-tokens.css"
+              echo "ERROR: Required token --$token missing from od-tokens.css"
               exit 1
             fi
           done
