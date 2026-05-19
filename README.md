@@ -5,9 +5,9 @@
 ## 项目简介
 
 壹目贯维官网，基于 Astro + Starlight 构建，采用 OD/OC Vibe Coding 工作流：
-- **OD (Operation Designer)**: 定调视觉方向，创建设计 Token
-- **OC (Operation Coder)**: 用 Token 写组件，不硬编码样式
-- **DD (DevOps Defender): CI/CD 守卫，自动检查
+- **OD (Open Design)**: 设计师，定调视觉方向，创建设计 Token
+- **OC (Open Code)**: 我通过 OC 下需求，coder 用 Token 写组件
+- **DD (DevOps Defender)**: CI/CD 守卫，自动检查
 
 设计 Token 系统：`src/styles/od-tokens.css`
 
