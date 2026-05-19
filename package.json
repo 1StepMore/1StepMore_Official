@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate-content.js",
+    "lint:tokens": "stylelint \"src/components/**/*.astro\" \"src/layouts/**/*.astro\"",
     "prebuild": "node scripts/validate-content.js"
   },
   "dependencies": {
@@ -18,5 +19,8 @@
     "sharp": "^0.34.5",
     "typescript": "^6.0.3",
     "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "stylelint": "^17.11.1"
   }
 }
