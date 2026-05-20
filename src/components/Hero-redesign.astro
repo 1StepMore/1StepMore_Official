@@ -2,6 +2,7 @@
 import '../styles/od-tokens.css';
 ---
 
+<!-- Redesigned Hero: AI Speed, Human Touch -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
@@ -43,6 +44,7 @@ import '../styles/od-tokens.css';
       <div class="hero-glow"></div>
       <div class="hero-card-stack">
 
+        <!-- Main card -->
         <div class="card-main">
           <div class="card-header">
             <span class="card-title">内容生产</span>
@@ -84,6 +86,7 @@ import '../styles/od-tokens.css';
           </div>
         </div>
 
+        <!-- Floating mini card 1 -->
         <div class="mini-card mini-card-1">
           <div class="mini-icon green">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -94,6 +97,7 @@ import '../styles/od-tokens.css';
           </div>
         </div>
 
+        <!-- Floating mini card 2 -->
         <div class="mini-card mini-card-2">
           <div class="mini-icon purple">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -110,8 +114,8 @@ import '../styles/od-tokens.css';
 </section>
 
 <style>
+  /* ── Layout ── */
   .hero { padding: 0; }
-
   .hero-inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -122,7 +126,7 @@ import '../styles/od-tokens.css';
     gap: 4rem;
   }
 
-  /* Badge */
+  /* ── Badge ── */
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -146,7 +150,7 @@ import '../styles/od-tokens.css';
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-  /* Headline */
+  /* ── Headline ── */
   .hero-headline {
     font-family: var(--od-font-display);
     font-size: clamp(2.5rem, 5vw, 3.8rem);
@@ -163,7 +167,7 @@ import '../styles/od-tokens.css';
     background-clip: text;
   }
 
-  /* Subheadline */
+  /* ── Subheadline ── */
   .hero-subheadline {
     font-family: var(--od-font-body);
     font-size: 1.2rem;
@@ -173,7 +177,7 @@ import '../styles/od-tokens.css';
     max-width: 460px;
   }
 
-  /* Actions */
+  /* ── Actions ── */
   .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
     font-family: var(--od-font-display);
@@ -204,12 +208,12 @@ import '../styles/od-tokens.css';
   }
   .btn-secondary:hover { color: var(--od-color-ai-speed); }
 
-  /* Stats */
+  /* ── Stats ── */
   .hero-stats { display: flex; gap: 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(99, 102, 241, 0.1); }
   .stat-value { font-family: var(--od-font-display); font-size: 1.5rem; font-weight: 700; color: var(--od-color-ai-speed); }
   .stat-label { font-family: var(--od-font-display); font-size: 0.75rem; color: var(--od-color-text-secondary); }
 
-  /* Visual */
+  /* ── Visual ── */
   .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
   .hero-glow {
     position: absolute; width: 500px; height: 500px; border-radius: 50%;
@@ -218,7 +222,7 @@ import '../styles/od-tokens.css';
   }
   .hero-card-stack { position: relative; width: 420px; height: 420px; }
 
-  /* Main card */
+  /* ── Main card ── */
   .card-main {
     position: absolute; inset: 0;
     background: var(--od-color-white);
@@ -235,7 +239,7 @@ import '../styles/od-tokens.css';
   .card-title { font-family: var(--od-font-display); font-size: 0.8rem; font-weight: 600; color: var(--od-color-text-secondary); text-transform: uppercase; letter-spacing: 0.08em; }
   .card-badge { font-family: var(--od-font-display); font-size: 0.7rem; font-weight: 600; color: var(--od-color-ai-speed); background: rgba(99, 102, 241, 0.08); padding: 0.25rem 0.75rem; border-radius: 999px; }
 
-  /* Content blocks */
+  /* ── Content blocks ── */
   .content-block { background: var(--od-color-human-touch); border-radius: var(--od-radius-human-touch); padding: 0.75rem 1rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
   .content-icon { width: 32px; height: 32px; border-radius: var(--od-radius-ai-speed); background: linear-gradient(135deg, var(--od-color-ai-speed), #818CF8); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; }
   .content-lines { flex: 1; }
@@ -244,14 +248,14 @@ import '../styles/od-tokens.css';
   .line.medium { width: 65%; }
   .line.full { width: 100%; }
 
-  /* Progress */
+  /* ── Progress ── */
   .card-progress { margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(99, 102, 241, 0.08); }
   .progress-label { font-family: var(--od-font-display); font-size: 0.7rem; color: var(--od-color-text-secondary); margin-bottom: 0.5rem; display: flex; justify-content: space-between; }
   .progress-pct { color: var(--od-color-ai-speed); font-weight: 600; }
   .progress-bar { height: 6px; background: rgba(99, 102, 241, 0.12); border-radius: 3px; overflow: hidden; }
   .progress-fill { height: 100%; width: 78%; background: linear-gradient(90deg, var(--od-color-ai-speed), #818CF8); border-radius: 3px; }
 
-  /* Mini cards */
+  /* ── Mini cards ── */
   .mini-card { position: absolute; background: var(--od-color-white); border-radius: 12px; border: 1px solid rgba(99, 102, 241, 0.1); box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; }
   .mini-card-1 { top: -20px; right: -20px; animation: float-mini-1 5s ease-in-out infinite; }
   .mini-card-2 { bottom: 40px; left: -30px; animation: float-mini-2 7s ease-in-out infinite; }
@@ -263,7 +267,7 @@ import '../styles/od-tokens.css';
   .mini-text { font-family: var(--od-font-display); font-size: 0.75rem; font-weight: 600; color: var(--od-color-text-primary); }
   .mini-sub { font-family: var(--od-font-display); font-size: 0.65rem; color: var(--od-color-text-secondary); }
 
-  /* Responsive */
+  /* ── Responsive ── */
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; text-align: center; }
     .hero-subheadline { margin: 0 auto 2.5rem; }
