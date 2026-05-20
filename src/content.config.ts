@@ -8,7 +8,7 @@ export const collections = {
     loader: docsLoader(),
     schema: docsSchema({
       extend: z.object({
-        type: z.enum(['product', 'blog']).optional(),
+        type: z.enum(['product', 'blog', 'solution', 'case']).optional(),
         price: z.string().optional(),
         pain_point: z.string().optional(),
         core_selling: z.string().optional(),
