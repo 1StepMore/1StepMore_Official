@@ -645,7 +645,9 @@
           "type": "string",
           "enum": [
             "product",
-            "blog"
+            "blog",
+            "solution",
+            "case"
           ]
         },
         "price": {
