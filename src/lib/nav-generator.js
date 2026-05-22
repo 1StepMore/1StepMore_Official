@@ -15,10 +15,22 @@ export function generateSidebar() {
 
   for (const section of config.sections) {
     if (section.showInNav) {
-      sidebar.push({
-        label: section.name,
-        items: [{ autogenerate: { directory: section.dir } }]
-      });
+      if (section.dir === 'cases') {
+        // cases: manually list entries (index page removed, Hero → case1 directly)
+        sidebar.push({
+          label: section.name,
+          items: [
+            { slug: 'cases/ecommerce-brand-content-automation' },
+            { slug: 'cases/law-firm-knowledge-base' },
+            { slug: 'cases/tech-media-localization' },
+          ],
+        });
+      } else {
+        sidebar.push({
+          label: section.name,
+          items: [{ autogenerate: { directory: section.dir } }]
+        });
+      }
     }
   }
 
