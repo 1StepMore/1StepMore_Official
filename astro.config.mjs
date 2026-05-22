@@ -13,6 +13,10 @@ export default defineConfig({
 			defaultLocale: 'zh',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: generateSidebar(),
+			customCss: [
+				'./src/styles/od-tokens.css',
+				'./src/styles/article-page.css',
+			],
 		}),
 	],
 });

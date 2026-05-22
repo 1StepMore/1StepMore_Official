@@ -17,6 +17,14 @@
   --od-radius-ai-speed: 4px;
   --od-radius-human-touch: 12px;
   --od-space-layout: 1.5rem;
+
+  /* 文章页专用 */
+  --od-color-bg-page: #faf7f2;      /* 暖白纸底 */
+  --od-color-accent: #6366F1;        /* indigo，主强调色 */
+  --od-color-accent-soft: rgba(99, 102, 241, 0.08);
+  --od-color-accent-border: rgba(99, 102, 241, 0.15);
+  --od-color-text-body: #1a1a2e;
+  --od-color-text-muted: #4a4a6a;
 }
 
 * {

@@ -1,0 +1,259 @@
+/* ================================================
+   文章页样式覆盖
+   壹目贯维 — AI Speed, Human Touch
+   配色逻辑：科技框架(indigo) + 温暖细节(暖白纸底)
+   ================================================ */
+
+/* ─── 文章页 body ─── */
+.sl-markdown-content {
+  font-family: var(--od-font-body);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--od-color-text-body);
+}
+
+/* ─── Hero 标题区：frontmatter title ─── */
+.sl-markdown-content > header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid var(--od-color-accent);
+}
+
+.sl-markdown-content > header h1 {
+  font-family: var(--od-font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--od-color-text-primary);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.sl-markdown-content > header p {
+  font-family: var(--od-font-display);
+  font-size: 0.95rem;
+  color: var(--od-color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ─── H2：衬线 + 左侧 accent bar ─── */
+.sl-markdown-content h2 {
+  font-family: var(--od-font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--od-color-text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--od-color-accent);
+  line-height: 1.4;
+}
+
+/* ─── H3：无衬线细体 ─── */
+.sl-markdown-content h3 {
+  font-family: var(--od-font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--od-color-text-primary);
+  margin-top: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── blockquote ─── */
+.sl-markdown-content blockquote {
+  border-left: 4px solid var(--od-color-accent);
+  padding: 0.75rem 1.25rem;
+  margin: 1.75rem 0;
+  background: rgba(99, 102, 241, 0.04);
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+  color: var(--od-color-text-muted);
+}
+
+.sl-markdown-content blockquote p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ─── 列表项：indigo 圆点 ─── */
+.sl-markdown-content ul li::before {
+  background: var(--od-color-accent);
+}
+
+/* ─── 链接 ─── */
+.sl-markdown-content a {
+  color: var(--od-color-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(99, 102, 241, 0.3);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s;
+}
+
+.sl-markdown-content a:hover {
+  text-decoration-color: var(--od-color-accent);
+}
+
+/* ─── strong ─── */
+.sl-markdown-content strong {
+  font-weight: 600;
+  color: var(--od-color-text-primary);
+}
+
+/* ─── CTA 区块 ─── */
+.article-cta {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid var(--od-color-accent-border);
+  border-left: 4px solid var(--od-color-accent);
+  border-radius: 12px;
+  padding: 2rem 2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.article-cta .cta-label {
+  font-family: var(--od-font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--od-color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.article-cta h3 {
+  font-family: var(--od-font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--od-color-text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.article-cta p {
+  font-family: var(--od-font-display);
+  font-size: 0.9rem;
+  color: var(--od-color-text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.article-cta .cta-buttons {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.article-cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--od-color-accent);
+  color: #ffffff;
+  font-family: var(--od-font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.article-cta .btn-primary:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+
+.article-cta .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: var(--od-color-accent);
+  font-family: var(--od-font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 2px solid var(--od-color-accent);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.article-cta .btn-secondary:hover {
+  background: rgba(99, 102, 241, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ─── 案例引用版 CTA ─── */
+.article-cta.cta-case {
+  background: #ffffff;
+}
+
+.article-cta.cta-case .case-quote {
+  font-family: var(--od-font-body);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--od-color-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.article-cta.cta-case .case-attribution {
+  font-family: var(--od-font-display);
+  font-size: 0.8rem;
+  color: var(--od-color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ─── 产品卡片版 CTA ─── */
+.article-cta.cta-product {
+  background: linear-gradient(135deg, rgba(250, 247, 242, 0.8) 0%, rgba(99, 102, 241, 0.04) 100%);
+}
+
+.article-cta.cta-product .product-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-cta.cta-product .product-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--od-color-accent) 0%, #818CF8 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: white;
+}
+
+.article-cta.cta-product .product-info h4 {
+  font-family: var(--od-font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--od-color-text-primary);
+  margin-bottom: 0.15rem;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.article-cta.cta-product .product-info p {
+  font-family: var(--od-font-display);
+  font-size: 0.8rem;
+  color: var(--od-color-text-muted);
+  margin: 0;
+}
