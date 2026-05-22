@@ -15,10 +15,18 @@ export function generateSidebar() {
 
   for (const section of config.sections) {
     if (section.showInNav) {
-      sidebar.push({
-        label: section.name,
-        items: [{ autogenerate: { directory: section.dir } }]
-      });
+      if (section.dir === 'cases') {
+        // cases has a custom index listing page - link directly, no autogenerate (avoids duplicate "客户案例" entry)
+        sidebar.push({
+          label: section.name,
+          link: `/${section.dir}/`,
+        });
+      } else {
+        sidebar.push({
+          label: section.name,
+          items: [{ autogenerate: { directory: section.dir } }]
+        });
+      }
     }
   }
 
