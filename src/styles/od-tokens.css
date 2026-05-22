@@ -25,6 +25,8 @@
   --od-color-accent-border: rgba(99, 102, 241, 0.15);
   --od-color-text-body: #1a1a2e;
   --od-color-text-muted: #4a4a6a;
+  --od-color-white: #ffffff;
+  --od-color-accent-strong: #4f46e5; /* indigo-600，用于 hover */
 }
 
 * {
