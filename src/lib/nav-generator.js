@@ -16,10 +16,15 @@ export function generateSidebar() {
   for (const section of config.sections) {
     if (section.showInNav) {
       if (section.dir === 'cases') {
-        // cases has a custom index listing page - link directly, no autogenerate (avoids duplicate "客户案例" entry)
+        // cases: manual item list with slug-based link to index (autogenerate would duplicate "客户案例" via index.mdx)
         sidebar.push({
           label: section.name,
-          link: `/${section.dir}/`,
+          items: [
+            { slug: 'cases/ecommerce-brand-content-automation' },
+            { slug: 'cases/law-firm-knowledge-base' },
+            { slug: 'cases/tech-media-localization' },
+            { slug: 'cases' },
+          ],
         });
       } else {
         sidebar.push({
