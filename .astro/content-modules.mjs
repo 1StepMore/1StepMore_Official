@@ -17,5 +17,6 @@ export default new Map([
 ["src/content/docs/products/ai-content-studio.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fproducts%2Fai-content-studio.mdx&astroContentModuleFlag=true")],
 ["src/content/docs/products/industry-intelligence.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fproducts%2Findustry-intelligence.mdx&astroContentModuleFlag=true")],
 ["src/content/docs/solutions/omni-localizer.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fsolutions%2Fomni-localizer.mdx&astroContentModuleFlag=true")],
-["src/content/docs/solutions/omni-pre-processor.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fsolutions%2Fomni-pre-processor.mdx&astroContentModuleFlag=true")]]);
+["src/content/docs/solutions/omni-pre-processor.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fsolutions%2Fomni-pre-processor.mdx&astroContentModuleFlag=true")],
+["src/content/docs/solutions/omni-re-formatter.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fsolutions%2Fomni-re-formatter.mdx&astroContentModuleFlag=true")]]);
 		

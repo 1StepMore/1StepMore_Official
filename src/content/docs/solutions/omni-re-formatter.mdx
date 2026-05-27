@@ -1,0 +1,95 @@
+---
+title: Omni Re-Formatter
+type: solution
+description: 格式精准还原——将翻译后的 MD/XLIFF 还原为 DOCX/PPTX/EPUB，图片注入对应段落，交付即上线
+pubDate: 2026-05-27
+---
+
+## Omni Re-Formatter
+
+翻译完成，格式还原交给 ORF。
+
+## 产品概述
+
+Omni Re-Formatter（ORF）是壹目贯维内容生产流水线的「最后一公里」——它解决的是翻译完成后格式还原的问题：Markdown / XLIFF 翻译完成后，如何精准地还原为原始复杂格式（DOCX / PPTX / EPUB），图片回到对应段落，格式不失真。
+
+这是翻译工作流中经常被忽视的一环：翻译质量再好，格式还原出问题，交付物仍然无法直接使用。
+
+## 核心痛点
+
+**翻译后的内容，格式还原全靠人工。**
+
+Markdown → DOCX 的简单转换，表格变形、标题乱序；XLIFF → DOCX 的回填，图片丢失、段落错位。市场上的方案要么不支持复杂格式，要么需要大量人工调整。
+
+ORF 的做法是：图片按段落索引精准注入，格式骨架完整保留，翻译内容一步到位还原。
+
+## 核心能力
+
+**图片段落级注入**
+
+ORF 接收 OPP 提取的 `paragraph_index` 数据，在回填时将图片精准注入对应段落位置。图片不再「随机漂移」或全部堆在文档末尾。
+
+**多格式输出**
+
+支持将 Markdown 或 XLIFF 翻译内容还原为 DOCX、PPTX、EPUB、HTML、ODT 等格式。一次翻译，多种交付物可用。
+
+**骨架结构保留**
+
+原始文档的 ZIP 骨架结构由 OPP 在提取时保存，ORF 在还原时直接复用，确保页眉、页脚、样式、主题等元素丝毫无损。
+
+**MCP Server + CLI 双接口**
+
+既可以通过 MCP 接口接入 AI 助手实现自动化管道，也可以通过 CLI 快速处理单个文件。企业内网可私有化部署，数据不出企业边界。
+
+## 技术架构
+
+ORF 以 MCP Server + CLI 的形式提供（Model Context Protocol），可以接入 Claude、ChatGPT 等主流 AI 助手，也可以通过命令行直接调用。私有化部署满足金融、医疗、政府等高合规要求。
+
+**支持格式**：DOCX · PPTX · EPUB · HTML · ODT
+
+**输入**：Markdown（配合原始骨架）/ XLIFF（配合 OPP 图片语义数据）
+
+**输出**：与原始格式一致的还原文档
+
+**MCP 工具**：`apply_md` / `apply_xliff` / `convert` / `info` / `detect_format`
+
+## 适用场景
+
+**翻译公司规模化交付**
+
+翻译完成后，ORF 自动将 XLIFF 回填为 DOCX，图片精准归位。交付物可直接提交客户，无需排版人员重新处理。
+
+**企业内容出海管道**
+
+与 OPP + OL 组成完整流水线：OPP 提取结构化内容 → OL 翻译 → ORF 还原格式。全程无需人工介入，翻译质量和格式完整性兼得。
+
+**多格式多渠道发布**
+
+同一份翻译内容，通过 ORF 输出不同格式：官网用 DOCX、帮助中心用 HTML、产品白皮书用 EPUB——一次翻译，多渠道发布。
+
+---
+
+**GitHub**：[1StepMore/Omni_Re_Formatter](https://github.com/1StepMore/Omni_Re_Formatter)
+
+---
+
+AI Speed, Human Touch. 既有科技洞察，也有人文关怀。
+
+<div class="article-cta cta-product">
+
+## 马上开始
+
+<div class="product-card">
+  <div class="product-icon">⚡</div>
+  <div class="product-info">
+    <h4>AI 内容工坊</h4>
+    <p>全链路自动化 · 多平台分发 · 数据驱动优化</p>
+  </div>
+</div>
+
+<div class="cta-buttons">
+  <a href="/1StepMore_Official/products/ai-content-studio" class="btn-primary">免费试用 30 天</a>
+  <a href="/1StepMore_Official/products/ai-content-studio" class="btn-secondary">联系我们</a>
+</div>
+
+</div>
