@@ -15,7 +15,7 @@
 /* ─── Hero 标题区：frontmatter title ─── */
 .sl-markdown-content > header {
   margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: var(--od-space-md);
   border-bottom: 3px solid var(--od-color-accent);
 }
 
@@ -25,7 +25,7 @@
   font-weight: 700;
   line-height: 1.3;
   color: var(--od-color-text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: var(--od-space-sm);
   letter-spacing: -0.02em;
 }
 
@@ -34,7 +34,7 @@
   font-size: 0.95rem;
   color: var(--od-color-text-muted);
   line-height: 1.7;
-  margin-bottom: 1rem;
+  margin-bottom: var(--od-space-sm);
 }
 
 /* ─── H2：衬线 + 左侧 accent bar ─── */
@@ -44,8 +44,8 @@
   font-weight: 600;
   color: var(--od-color-text-primary);
   margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
+  margin-bottom: var(--od-space-sm);
+  padding-left: var(--od-space-sm);
   border-left: 3px solid var(--od-color-accent);
   line-height: 1.4;
 }
@@ -57,13 +57,13 @@
   font-weight: 600;
   color: var(--od-color-text-primary);
   margin-top: 1.8rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--od-space-xs);
 }
 
 /* ─── blockquote ─── */
 .sl-markdown-content blockquote {
   border-left: 4px solid var(--od-color-accent);
-  padding: 0.75rem 1.25rem;
+  padding: var(--od-space-xs) 1.25rem;
   margin: 1.75rem 0;
   background: var(--od-color-accent-soft);
   border-radius: 0 4px 4px 0;
@@ -107,9 +107,9 @@
   border: 1px solid var(--od-color-accent-border);
   border-left: 4px solid var(--od-color-accent);
   border-radius: 12px;
-  padding: 2rem 2rem;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  padding: var(--od-space-lg) var(--od-space-lg);
+  margin-top: var(--od-space-xl);
+  margin-bottom: var(--od-space-lg);
 }
 
 .article-cta .cta-label {
@@ -119,7 +119,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--od-color-accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--od-space-xs);
 }
 
 .article-cta h3 {
@@ -127,7 +127,7 @@
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--od-color-text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--od-space-xs);
   line-height: 1.3;
   border: none;
   padding: 0;
@@ -138,7 +138,7 @@
   font-family: var(--od-font-display);
   font-size: 0.9rem;
   color: var(--od-color-text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--od-space-md);
   line-height: 1.7;
 }
 
@@ -204,7 +204,7 @@
   font-size: 1rem;
   font-style: italic;
   color: var(--od-color-text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--od-space-2xs);
   line-height: 1.7;
 }
 
@@ -212,7 +212,7 @@
   font-family: var(--od-font-display);
   font-size: 0.8rem;
   color: var(--od-color-text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--od-space-md);
 }
 
 /* ─── 产品卡片版 CTA ─── */
@@ -223,8 +223,8 @@
 .article-cta.cta-product .product-card {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: var(--od-space-sm);
+  margin-bottom: var(--od-space-md);
 }
 
 .article-cta.cta-product .product-icon {

@@ -41,3 +41,31 @@ body {
   color: var(--od-color-text-primary);
   line-height: 1.6;
 }
+
+/* ===== 收敛补充: 间距尺度 / 状态色 / 强调透明度 / 圆角 (2026-08-24 审查收敛) ===== */
+:root {
+  /* 间距尺度 scale: 值 = Hero/article-page 实际使用, 保证视觉不变 */
+  --od-space-2xs: 0.5rem;
+  --od-space-xs: 0.75rem;
+  --od-space-sm: 1rem;
+  --od-space-md: 1.5rem;   /* 对齐原 --od-space-layout */
+  --od-space-lg: 2rem;
+  --od-space-xl: 3rem;
+  --od-space-2xl: 4rem;
+  --od-space-3xl: 5rem;
+  --od-space-4xl: 7rem;
+  --od-space-5xl: 8rem;
+  /* 状态色 */
+  --od-color-success-bg: #D1FAE5;
+  --od-color-success: #059669;
+  --od-color-info-bg: #EDE9FE;
+  --od-color-info: #7C3AED;
+  /* 强调透明度变体 */
+  --od-color-accent-softer: rgba(99, 102, 241, 0.10);
+  --od-color-accent-line: rgba(99, 102, 241, 0.12);
+  --od-color-accent-border-strong: rgba(99, 102, 241, 0.20);
+  --od-color-accent-light: #818CF8;
+  /* 圆角补档 */
+  --od-radius-lg: 20px;
+  --od-radius-pill: 999px;
+}
