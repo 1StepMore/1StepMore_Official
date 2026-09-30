@@ -2,3 +2,9 @@ node_modules/
 dist/
 .git/
 *.log
+# 构建缓存（曾误入库，2026-09-30 起停止跟踪）
+.astro/
+# 本地归档（设计稿/快照，不上仓库）
+.archive/
+# 备份文件（曾误入库 index.mdx.bak）
+*.bak
