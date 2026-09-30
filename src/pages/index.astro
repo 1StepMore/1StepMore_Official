@@ -1,9 +1,20 @@
 ---
+/**
+ * 首页（2026-09-30 OD 设计落地）
+ * 结构：首屏（能力轮播）→ 能力展示（导轨+滑动）→ 案例证据 → 信任带 → 品牌引语 → 结尾行动区
+ * 注意：src/content/docs/index.mdx 与本文件是同一首页的两份定义（历史遗留），改动需两处同步。
+ */
 import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
+import CapabilityShowcase from '../components/CapabilityShowcase.astro';
+import CaseEvidence from '../components/CaseEvidence.astro';
+import TrustBand from '../components/TrustBand.astro';
 import Testimonials from '../components/Testimonials.astro';
+import ClosingCta from '../components/ClosingCta.astro';
 ---
 
 <Hero />
-<Features />
+<CapabilityShowcase />
+<CaseEvidence />
+<TrustBand />
 <Testimonials />
+<ClosingCta />

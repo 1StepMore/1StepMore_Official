@@ -1,0 +1,42 @@
+---
+const items = [
+  {
+    title: '小团队，直接对接',
+    body: '没有庞大的转包链条。方案与执行由同一批人负责，沟通没有中间损耗。',
+  },
+  {
+    title: '私有化交付 + 陪跑',
+    body: '可以在私有环境交付，也可以把流程放进你自己的系统；交付过程中你的人一起做，交付后能自己跑。',
+  },
+  {
+    title: 'AI 的速度，人的温度',
+    body: '机器负责吞吐与倍率，判断、审美与沟通交还给人。',
+  },
+];
+---
+
+<section class="trust">
+  <div class="trust-inner">
+    {items.map((it) => (
+      <div class="trust-col">
+        <h3>{it.title}</h3>
+        <p>{it.body}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .trust { padding: var(--od-space-2xl) var(--od-space-sm); background: var(--od-color-human-touch); }
+  .trust-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--od-space-xl);
+  }
+  .trust-col { border-top: 2px solid var(--od-color-accent-border); padding-top: var(--od-space-sm); }
+  .trust-col h3 {
+    font-family: var(--od-font-display); font-size: 1rem; font-weight: 600;
+    color: var(--od-color-text-primary); margin: 0 0 var(--od-space-2xs) 0;
+  }
+  .trust-col p { font-size: 0.85rem; line-height: 1.75; color: var(--od-color-text-secondary); margin: 0; }
+  @media (max-width: 900px) { .trust-inner { grid-template-columns: 1fr; gap: var(--od-space-md); } }
+</style>

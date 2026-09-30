@@ -69,3 +69,16 @@ body {
   --od-radius-lg: 20px;
   --od-radius-pill: 999px;
 }
+
+/* ===== 首页改版（2026-09-30 OD 设计落地）：边框/面/状态/阴影/等宽 ===== */
+:root {
+  --od-color-border: #E7E3DC;
+  --od-color-surface: #ffffff;
+  --od-color-surface-muted: #F0EFF4;
+  --od-color-warn: #B45309;
+  --od-color-warn-bg: #FEF3C7;
+  --od-color-ink-2: #33334D;
+  --od-elev-raised: 0 18px 36px -18px rgba(26, 26, 46, 0.18);
+  --od-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --od-leading-tight: 1.15;
+}

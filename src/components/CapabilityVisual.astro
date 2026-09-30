@@ -1,0 +1,162 @@
+---
+/**
+ * 每项能力的独立视觉语言（纯 CSS，无图片、无外部依赖）
+ * pipeline = 发布流水线面板 / sources = 多源汇聚与来源时间线
+ * langs    = 多语种并排与格式一致 / route = 五步工序路线图
+ */
+const { visual } = Astro.props;
+---
+
+{visual === 'pipeline' && (
+  <div class="viz">
+    <div class="viz-head"><span>发布流水线</span><span class="viz-badge">今日已发布 50</span></div>
+    <ol class="pipe">
+      <li><b>01</b><span>热点发现</span><em>12 个话题</em></li>
+      <li><b>02</b><span>多平台文案</span><em>4 个渠道</em></li>
+      <li><b>03</b><span>封面素材</span><em>12 张</em></li>
+      <li><b>04</b><span>分发排期</span><em>6 个时段</em></li>
+    </ol>
+    <ul class="queue">
+      <li><span class="q-name">小红书 · 春日选题</span><span class="pill ok">已发布</span></li>
+      <li><span class="q-name">公众号 · 行业观察</span><span class="pill wait">审核中</span></li>
+      <li><span class="q-name">抖音 · 口播脚本</span><span class="pill todo">待发布</span></li>
+    </ul>
+  </div>
+)}
+
+{visual === 'sources' && (
+  <div class="viz">
+    <div class="viz-head"><span>信息源</span><span class="viz-badge">30+ 个来源</span></div>
+    <div class="tiles">
+      <span>政策文件</span><span>行业媒体</span><span>竞品官网</span><span>平台规则</span>
+      <span>招投标</span><span>展会</span><span>渠道反馈</span><span>客户反馈</span>
+    </div>
+    <ul class="feed">
+      <li><time>08:20</time><p>设备更新申报通知发布</p><i>政策文件</i></li>
+      <li><time>09:05</time><p>同行发布新一代产线方案</p><i>竞品官网</i></li>
+      <li><time>17:40</time><p>素材授权要求调整</p><i>平台规则</i></li>
+    </ul>
+    <p class="viz-foot">每条带来源与时间 · 可直接引用</p>
+  </div>
+)}
+
+{visual === 'langs' && (
+  <div class="viz">
+    <div class="viz-head"><span>中文 → 多语种</span><span class="viz-badge">格式保留</span></div>
+    <div class="langs">
+      <div class="lang"><b>中文</b><span class="bar w100"></span><span class="bar w72"></span><span class="bar w90"></span></div>
+      <div class="lang"><b>EN</b><span class="bar w96"></span><span class="bar w68"></span><span class="bar w86"></span></div>
+      <div class="lang"><b>日本語</b><span class="bar w92"></span><span class="bar w76"></span><span class="bar w84"></span></div>
+      <div class="lang"><b>한국어</b><span class="bar w94"></span><span class="bar w64"></span><span class="bar w88"></span></div>
+    </div>
+    <p class="viz-foot">术语表贯穿全项目 · 版式与编号一致</p>
+  </div>
+)}
+
+{visual === 'route' && (
+  <div class="viz">
+    <div class="viz-head"><span>五步操盘法</span><span class="viz-badge">16 周</span></div>
+    <ol class="route">
+      <li class="done"><b>01</b><span>摸底诊断</span><em>第 1–2 周</em></li>
+      <li class="done"><b>02</b><span>场景验证</span><em>第 3–4 周</em></li>
+      <li class="now"><b>03</b><span>数据与治理</span><em>第 5–8 周</em></li>
+      <li><b>04</b><span>试点闭环</span><em>第 9–14 周</em></li>
+      <li><b>05</b><span>复制推广</span><em>第 15–16 周</em></li>
+    </ol>
+    <div class="route-bar"><span></span></div>
+  </div>
+)}
+
+<style>
+  .viz {
+    background: var(--od-color-surface);
+    border: 1px solid var(--od-color-border);
+    border-radius: var(--od-radius-human-touch);
+    padding: var(--od-space-md);
+    box-shadow: var(--od-elev-raised);
+  }
+  .viz-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--od-font-display); font-size: 0.9rem; font-weight: 600;
+    color: var(--od-color-text-primary);
+    padding-bottom: var(--od-space-2xs); margin-bottom: var(--od-space-sm);
+    border-bottom: 1px solid var(--od-color-border);
+  }
+  .viz-badge {
+    font-family: var(--od-font-mono); font-size: 0.7rem; font-weight: 500;
+    color: var(--od-color-accent);
+    background: var(--od-color-accent-soft);
+    border: 1px solid var(--od-color-accent-border);
+    border-radius: var(--od-radius-pill);
+    padding: 2px 8px;
+  }
+  .viz-foot {
+    margin: var(--od-space-sm) 0 0 0;
+    font-size: 0.75rem; color: var(--od-color-text-muted);
+  }
+
+  /* 01 发布流水线 */
+  .pipe { list-style: none; margin: 0 0 var(--od-space-sm) 0; padding: 0; display: grid; gap: var(--od-space-2xs); }
+  .pipe li {
+    display: grid; grid-template-columns: 2rem 1fr auto; align-items: center;
+    gap: var(--od-space-2xs);
+    background: var(--od-color-surface-muted);
+    border-radius: var(--od-radius-ai-speed);
+    padding: var(--od-space-2xs) var(--od-space-sm);
+    font-size: 0.85rem; color: var(--od-color-text-primary);
+  }
+  .pipe b { font-family: var(--od-font-mono); font-size: 0.7rem; color: var(--od-color-accent); }
+  .pipe em { font-style: normal; font-size: 0.75rem; color: var(--od-color-text-muted); }
+  .queue { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--od-space-2xs); }
+  .queue li { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--od-color-ink-2); }
+  .pill { font-size: 0.68rem; border-radius: var(--od-radius-pill); padding: 1px 8px; }
+  .pill.ok { color: var(--od-color-success); background: var(--od-color-success-bg); }
+  .pill.wait { color: var(--od-color-warn); background: var(--od-color-warn-bg); }
+  .pill.todo { color: var(--od-color-text-muted); background: var(--od-color-surface-muted); }
+
+  /* 02 多源汇聚 */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--od-space-2xs); margin-bottom: var(--od-space-sm); }
+  .tiles span {
+    font-size: 0.72rem; text-align: center; padding: 6px 4px;
+    color: var(--od-color-text-secondary);
+    background: var(--od-color-accent-soft);
+    border: 1px solid var(--od-color-accent-border);
+    border-radius: var(--od-radius-ai-speed);
+  }
+  .feed { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--od-space-2xs); }
+  .feed li {
+    display: grid; grid-template-columns: 2.6rem 1fr auto; align-items: center; gap: var(--od-space-2xs);
+    font-size: 0.82rem; color: var(--od-color-ink-2);
+    border-bottom: 1px dashed var(--od-color-border);
+    padding-bottom: var(--od-space-2xs);
+  }
+  .feed time { font-family: var(--od-font-mono); font-size: 0.68rem; color: var(--od-color-text-muted); }
+  .feed i { font-style: normal; font-size: 0.68rem; color: var(--od-color-accent); }
+
+  /* 03 多语种并排 */
+  .langs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--od-space-2xs); }
+  .lang { display: grid; gap: 5px; }
+  .lang b { font-size: 0.7rem; font-family: var(--od-font-mono); color: var(--od-color-text-muted); font-weight: 500; }
+  .bar { display: block; height: 5px; border-radius: var(--od-radius-pill); background: var(--od-color-accent-line); }
+  .bar.w100 { width: 100%; } .bar.w96 { width: 96%; } .bar.w94 { width: 94%; }
+  .bar.w92 { width: 92%; } .bar.w90 { width: 90%; } .bar.w88 { width: 88%; }
+  .bar.w86 { width: 86%; } .bar.w84 { width: 84%; } .bar.w76 { width: 76%; }
+  .bar.w72 { width: 72%; } .bar.w68 { width: 68%; } .bar.w64 { width: 64%; }
+
+  /* 04 五步路线图 */
+  .route { list-style: none; margin: 0 0 var(--od-space-sm) 0; padding: 0; display: grid; gap: var(--od-space-2xs); }
+  .route li {
+    display: grid; grid-template-columns: 2rem 1fr auto; align-items: center; gap: var(--od-space-2xs);
+    font-size: 0.85rem; color: var(--od-color-text-muted);
+    border-left: 2px solid var(--od-color-border);
+    padding: 2px 0 2px var(--od-space-sm);
+  }
+  .route li b { font-family: var(--od-font-mono); font-size: 0.7rem; }
+  .route li em { font-style: normal; font-size: 0.72rem; }
+  .route li.done { color: var(--od-color-text-primary); border-left-color: var(--od-color-accent); }
+  .route li.done b { color: var(--od-color-accent); }
+  .route li.now { color: var(--od-color-text-primary); border-left-color: var(--od-color-info); font-weight: 600; }
+  .route li.now b { color: var(--od-color-info); }
+  .route-bar { height: 6px; border-radius: var(--od-radius-pill); background: var(--od-color-surface-muted); overflow: hidden; }
+  .route-bar span { display: block; height: 100%; width: 58%; background: var(--od-color-accent); border-radius: var(--od-radius-pill); }
+</style>

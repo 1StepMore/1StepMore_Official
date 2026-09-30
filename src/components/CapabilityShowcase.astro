@@ -1,0 +1,134 @@
+---
+import CapabilityVisual from './CapabilityVisual.astro';
+import { capabilities } from '../data/capabilities.js';
+const BASE = import.meta.env.BASE_URL;
+const href = (l) => BASE + l.replace(/^\//, '');
+---
+
+<section class="caps" id="capabilities">
+  <div class="caps-inner">
+    <p class="kicker">CAPABILITIES</p>
+    <h2 class="caps-title">能力覆盖内容与信息的全链路</h2>
+    <p class="caps-sub">挑你最关心的一项，看它具体怎么跑、交付什么、客户拿到什么结果。</p>
+
+    <div class="caps-body" data-tabs>
+      <ol class="rail">
+        {capabilities.map((c, i) => (
+          <li>
+            <button class="tab" data-tab data-index={i} type="button" aria-current={i === 0 ? 'true' : 'false'}>
+              <b>{c.num}</b>
+              <span>{c.name}</span>
+              <em>{c.pain}</em>
+            </button>
+          </li>
+        ))}
+      </ol>
+
+      <div class="panels">
+        {capabilities.map((c, i) => (
+          <article class={"panel" + (i === 0 ? " is-active" : "")} data-panel data-index={i} aria-hidden={i === 0 ? 'false' : 'true'}>
+            <header class="panel-head">
+              <span class="panel-num">{c.num}</span>
+              <span class="panel-en">{c.en}</span>
+            </header>
+            <h3 class="panel-name">{c.name}</h3>
+            <p class="panel-line">{c.oneLiner}</p>
+            <ul class="panel-bullets">
+              {c.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+            <div class="panel-visual"><CapabilityVisual visual={c.visual} /></div>
+            <div class="panel-foot">
+              <div class="panel-metric">
+                <strong>{c.metric.value}</strong>
+                <span>{c.metric.label}</span>
+              </div>
+              <a class="panel-link" href={href(c.link)}>了解详情 →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .caps { padding: var(--od-space-3xl) var(--od-space-sm); background: var(--od-color-human-touch); }
+  .caps-inner { max-width: 1180px; margin: 0 auto; }
+  .kicker {
+    font-family: var(--od-font-mono); font-size: 0.72rem; letter-spacing: 0.14em;
+    color: var(--od-color-accent); text-align: center; margin: 0 0 var(--od-space-2xs) 0;
+  }
+  .caps-title {
+    font-family: var(--od-font-display); font-size: 2rem; font-weight: 700; text-align: center;
+    color: var(--od-color-text-primary); margin: 0 0 var(--od-space-2xs) 0;
+  }
+  .caps-sub {
+    text-align: center; color: var(--od-color-text-secondary); font-size: 0.95rem;
+    margin: 0 auto var(--od-space-xl) auto; max-width: 44rem; line-height: 1.75;
+  }
+  .caps-body { display: grid; grid-template-columns: 300px 1fr; gap: var(--od-space-lg); align-items: start; }
+
+  .rail { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--od-space-2xs); }
+  .tab {
+    width: 100%; text-align: left; cursor: pointer;
+    background: transparent; border: none; border-left: 2px solid var(--od-color-border);
+    padding: var(--od-space-2xs) 0 var(--od-space-2xs) var(--od-space-sm);
+    display: grid; gap: 2px;
+  }
+  .tab b { font-family: var(--od-font-mono); font-size: 0.7rem; color: var(--od-color-text-muted); }
+  .tab span { font-family: var(--od-font-display); font-size: 1.05rem; color: var(--od-color-text-muted); }
+  .tab em { font-style: normal; font-size: 0.75rem; color: var(--od-color-text-muted); opacity: 0.75; }
+  .tab[aria-current="true"] { border-left-color: var(--od-color-accent); }
+  .tab[aria-current="true"] b { color: var(--od-color-accent); }
+  .tab[aria-current="true"] span { color: var(--od-color-text-primary); font-weight: 600; }
+  .tab:hover span { color: var(--od-color-text-primary); }
+
+  .panel {
+    display: none;
+    background: var(--od-color-surface);
+    border: 1px solid var(--od-color-border);
+    border-radius: var(--od-radius-human-touch);
+    padding: var(--od-space-md);
+    box-shadow: var(--od-elev-raised);
+  }
+  .panel.is-active { display: block; }
+  .panel-head { display: flex; justify-content: space-between; align-items: center; }
+  .panel-num { font-family: var(--od-font-mono); font-size: 0.72rem; color: var(--od-color-accent); }
+  .panel-en { font-family: var(--od-font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--od-color-text-muted); }
+  .panel-name { font-family: var(--od-font-display); font-size: 1.5rem; margin: var(--od-space-2xs) 0; color: var(--od-color-text-primary); }
+  .panel-line { font-size: 0.9rem; line-height: 1.75; color: var(--od-color-text-secondary); margin: 0 0 var(--od-space-sm) 0; }
+  .panel-bullets { margin: 0 0 var(--od-space-md) 0; padding-left: 1.1rem; display: grid; gap: 4px; }
+  .panel-bullets li { font-size: 0.85rem; line-height: 1.7; color: var(--od-color-text-body); }
+  .panel-visual { margin-bottom: var(--od-space-md); }
+  .panel-foot { display: flex; justify-content: space-between; align-items: center; gap: var(--od-space-sm); }
+  .panel-metric { display: flex; align-items: baseline; gap: var(--od-space-2xs); }
+  .panel-metric strong { font-family: var(--od-font-display); font-size: 1.2rem; color: var(--od-color-accent); }
+  .panel-metric span { font-size: 0.75rem; color: var(--od-color-text-muted); }
+  .panel-link {
+    font-size: 0.85rem; font-weight: 600; color: var(--od-color-accent);
+    text-decoration: none; white-space: nowrap;
+  }
+  .panel-link:hover { color: var(--od-color-accent-strong); }
+
+  @media (max-width: 900px) {
+    .caps-body { grid-template-columns: 1fr; }
+    .rail { display: flex; overflow-x: auto; gap: var(--od-space-sm); }
+    .tab { min-width: 200px; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('[data-tabs]').forEach(function (root) {
+    var panels = Array.prototype.slice.call(root.querySelectorAll('[data-panel]'));
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-tab]'));
+    function show(n) {
+      panels.forEach(function (p, k) {
+        p.classList.toggle('is-active', k === n);
+        p.setAttribute('aria-hidden', k === n ? 'false' : 'true');
+      });
+      tabs.forEach(function (t, k) { t.setAttribute('aria-current', k === n ? 'true' : 'false'); });
+    }
+    show(0);
+    tabs.forEach(function (t, k) { t.addEventListener('click', function () { show(k); }); });
+  });
+</script>
