@@ -1,0 +1,59 @@
+---
+import '../styles/od-tokens.css';
+---
+
+<section class="testimonials">
+  <div class="testimonials__inner">
+    <blockquote class="testimonials__quote">
+      <p class="testimonials__text">
+        "AI应该放大你的能力，而不是替代你的判断。在这场变革中，找到属于你的"人机协同节奏"，才是真正的护城河。"
+      </p>
+      <footer class="testimonials__footer">
+        <cite class="testimonials__author">壹目贯维</cite>
+      </footer>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background-color: var(--od-color-bg-testimonials);
+    padding: var(--od-space-layout);
+  }
+
+  .testimonials__inner {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .testimonials__quote {
+    margin: 0;
+    padding: 0;
+  }
+
+  .testimonials__text {
+    font-family: var(--od-font-body);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--od-color-text-primary);
+    margin: 0 0 var(--od-space-layout);
+    font-style: italic;
+  }
+
+  .testimonials__footer {
+    margin-top: var(--od-space-layout);
+  }
+
+  .testimonials__author {
+    font-family: var(--od-font-body);
+    font-size: 1rem;
+    color: var(--od-color-text-secondary);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .testimonials__author::before {
+    content: "— ";
+  }
+</style>

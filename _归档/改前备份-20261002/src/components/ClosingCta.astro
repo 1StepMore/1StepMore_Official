@@ -1,0 +1,77 @@
+---
+const steps = [
+  { n: '01', t: '先讲清你现在的流程与卡点，不做产品演示。' },
+  { n: '02', t: '当场判断哪一条能力最值得先动，以及大概需要多久。' },
+  { n: '03', t: '给你一个可执行的阶段路径与时间预期。' },
+];
+---
+
+<section class="closing" id="contact">
+  <div class="closing-inner">
+    <div class="closing-copy">
+      <p class="kicker">NEXT STEP</p>
+      <h2>把你的场景交给我们跑一遍</h2>
+      <p class="closing-sub">
+        不用先想清楚所有细节。说清你现在流程卡在哪一步，我们会告诉你哪一条能力最值得先动，以及大概需要多久。
+      </p>
+      <div class="closing-actions">
+        <a class="btn-main" href="mailto:support@1stepmore.com">预约 30 分钟沟通</a>
+        <a class="btn-ghost" href="#capabilities">回看能力</a>
+      </div>
+    </div>
+    <div class="closing-box">
+      <h3>第一次沟通会发生什么</h3>
+      <ol>
+        {steps.map((s) => (
+          <li><b>{s.n}</b><span>{s.t}</span></li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .closing { padding: var(--od-space-3xl) var(--od-space-sm); background: var(--od-color-surface-muted); }
+  .closing-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--od-space-2xl); align-items: center;
+  }
+  .kicker {
+    font-family: var(--od-font-mono); font-size: 0.72rem; letter-spacing: 0.14em;
+    color: var(--od-color-accent); margin: 0 0 var(--od-space-2xs) 0;
+  }
+  .closing h2 {
+    font-family: var(--od-font-display); font-size: 1.9rem; font-weight: 700; line-height: var(--od-leading-tight);
+    color: var(--od-color-text-primary); margin: 0 0 var(--od-space-sm) 0;
+  }
+  .closing-sub { font-size: 0.95rem; line-height: 1.8; color: var(--od-color-text-secondary); margin: 0 0 var(--od-space-md) 0; }
+  .closing-actions { display: flex; gap: var(--od-space-sm); flex-wrap: wrap; }
+  .btn-main {
+    display: inline-block; text-decoration: none;
+    background: var(--od-color-accent); color: var(--od-color-white);
+    font-weight: 600; font-size: 0.9rem;
+    padding: 0.7rem 1.4rem; border-radius: var(--od-radius-pill);
+  }
+  .btn-main:hover { background: var(--od-color-accent-strong); }
+  .btn-ghost {
+    display: inline-block; text-decoration: none;
+    color: var(--od-color-accent); font-weight: 600; font-size: 0.9rem;
+    padding: 0.7rem 1.2rem; border: 1px solid var(--od-color-accent-border-strong);
+    border-radius: var(--od-radius-pill); background: var(--od-color-surface);
+  }
+  .closing-box {
+    background: var(--od-color-surface);
+    border: 1px solid var(--od-color-border);
+    border-radius: var(--od-radius-human-touch);
+    padding: var(--od-space-md);
+    box-shadow: var(--od-elev-raised);
+  }
+  .closing-box h3 {
+    font-family: var(--od-font-display); font-size: 1rem; margin: 0 0 var(--od-space-sm) 0;
+    color: var(--od-color-text-primary);
+  }
+  .closing-box ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--od-space-2xs); }
+  .closing-box li { display: grid; grid-template-columns: 2rem 1fr; gap: var(--od-space-2xs); font-size: 0.85rem; line-height: 1.7; color: var(--od-color-text-secondary); }
+  .closing-box b { font-family: var(--od-font-mono); font-size: 0.72rem; color: var(--od-color-accent); }
+  @media (max-width: 900px) { .closing-inner { grid-template-columns: 1fr; gap: var(--od-space-lg); } }
+</style>

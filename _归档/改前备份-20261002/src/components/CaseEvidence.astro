@@ -1,0 +1,62 @@
+---
+import { caseEvidence } from '../data/capabilities.js';
+const BASE = import.meta.env.BASE_URL;
+const href = (l) => BASE + l.replace(/^\//, '');
+---
+
+<section class="evidence" id="cases">
+  <div class="ev-inner">
+    <p class="kicker">EVIDENCE</p>
+    <h2 class="ev-title">结果留在数字里</h2>
+    <p class="ev-sub">按合作要求，客户名称一律隐去，只保留行业特征与可核对的数字。每一项能力都有对应的落地案例。</p>
+
+    <div class="ev-grid">
+      {caseEvidence.map((c) => (
+        <a class="ev-card" href={href(c.link)}>
+          <span class="ev-tag">{c.tag}</span>
+          <h3 class="ev-org">{c.org}</h3>
+          <p class="ev-metric">{c.metric}</p>
+          <p class="ev-note">{c.note}</p>
+          <span class="ev-more">看这个案例 →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .evidence { padding: var(--od-space-3xl) var(--od-space-sm); background: var(--od-color-surface-muted); }
+  .ev-inner { max-width: 1180px; margin: 0 auto; }
+  .kicker {
+    font-family: var(--od-font-mono); font-size: 0.72rem; letter-spacing: 0.14em;
+    color: var(--od-color-accent); text-align: center; margin: 0 0 var(--od-space-2xs) 0;
+  }
+  .ev-title {
+    font-family: var(--od-font-display); font-size: 2rem; font-weight: 700; text-align: center;
+    color: var(--od-color-text-primary); margin: 0 0 var(--od-space-2xs) 0;
+  }
+  .ev-sub {
+    text-align: center; color: var(--od-color-text-secondary); font-size: 0.95rem;
+    margin: 0 auto var(--od-space-xl) auto; max-width: 44rem; line-height: 1.75;
+  }
+  .ev-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--od-space-sm); }
+  .ev-card {
+    display: block; text-decoration: none;
+    background: var(--od-color-surface);
+    border: 1px solid var(--od-color-border);
+    border-radius: var(--od-radius-human-touch);
+    padding: var(--od-space-md);
+  }
+  .ev-card:hover { border-color: var(--od-color-accent-border-strong); }
+  .ev-tag {
+    display: inline-block; font-size: 0.68rem; color: var(--od-color-accent);
+    background: var(--od-color-accent-soft); border: 1px solid var(--od-color-accent-border);
+    border-radius: var(--od-radius-pill); padding: 2px 8px; margin-bottom: var(--od-space-2xs);
+  }
+  .ev-org { font-family: var(--od-font-display); font-size: 1rem; margin: 0 0 var(--od-space-2xs) 0; color: var(--od-color-text-primary); }
+  .ev-metric { font-family: var(--od-font-display); font-size: 1.05rem; font-weight: 700; color: var(--od-color-accent); margin: 0 0 var(--od-space-2xs) 0; }
+  .ev-note { font-size: 0.8rem; line-height: 1.7; color: var(--od-color-text-secondary); margin: 0 0 var(--od-space-2xs) 0; }
+  .ev-more { font-size: 0.78rem; font-weight: 600; color: var(--od-color-accent); }
+  @media (max-width: 1000px) { .ev-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .ev-grid { grid-template-columns: 1fr; } }
+</style>

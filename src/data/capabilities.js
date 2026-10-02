@@ -5,7 +5,7 @@
  * 数量说死会让客户觉得"就这几样"，也不利后续扩展。
  * 新增能力：往数组里加一项即可（首页轮播/导轨/案例区都从这里读）。
  *
- * metric 均取自已交付的匿名案例页，可核对，不编造。
+ * metric 取自匿名案例页，数字为实践区间示意（客户名已隐去），不新增未经核对的数字。
  */
 export const capabilities = [
   {
@@ -16,7 +16,7 @@ export const capabilities = [
     oneLiner:
       '热点发现 → 多平台文案 → 封面素材 → 分发排期，一条流水线跑完。人只做判断，不做重复劳动。',
     pain: 'AI 直出质量不稳，全人工又慢又贵',
-    metric: { value: '50 篇/天', label: '单客户内容日更' },
+    metric: { value: '50 篇/周', label: '单客户内容产出' },
     visual: 'pipeline',
     link: '/products/ai-content-studio/',
     bullets: [
@@ -83,7 +83,7 @@ export const caseEvidence = [
   {
     tag: '内容生产',
     org: '某消费品牌',
-    metric: '10 篇/周 → 50 篇/天',
+    metric: '10 篇/周 → 50 篇/周',
     note: '内容组不再从零起标题、选题、封面，人只做审核与调性判断。',
     link: '/cases/ecommerce-brand-content-automation/',
   },
