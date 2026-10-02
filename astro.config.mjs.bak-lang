@@ -18,7 +18,6 @@ export default defineConfig({
 		starlight({
 			title: '壹目贯维',
 			defaultLocale: 'zh',
-			locales: { zh: { label: '中文', lang: 'zh-CN' } },
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/1StepMore/1StepMore_Official' }],
 			sidebar: generateSidebar(),
 			customCss: [
